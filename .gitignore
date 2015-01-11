@@ -1,0 +1,10 @@
+*.o
+*.exe
+*.a
+/contrib
+/doc
+/examples
+/man
+/share
+config*
+/**/.deps

@@ -6,7 +6,7 @@
  * With AHPCRC, University of Minnesota
  * ANTLR Version 1.33MR33
  *
- *   ../pccts/antlr/antlr -ga -k 2 -gl ./verilog.g
+ *   e:\gtkspy\gtkspy\contrib\pccts\antlr\antlr.exe -ga -k 2 -gl ./verilog.g
  *
  */
 

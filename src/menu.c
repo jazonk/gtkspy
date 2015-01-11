@@ -29,6 +29,7 @@
 #include "tcl_helper.h"
 #include <cocoa_misc.h>
 #include <assert.h>
+#include "conversion.h"
 
 #if !defined __MINGW32__ && !defined _MSC_VER
 #include <unistd.h>
@@ -3919,6 +3920,12 @@ if(!GLOBALS->partial_vcd)
 	}
 }
 
+void
+menu_conversion(gpointer null_data, guint callback_action, GtkWidget *widget)
+{
+ printf("hello \n");
+ test();
+}
 /**/
 
 void
@@ -7369,7 +7376,7 @@ static gtkwave_mlist_t menu_items[] =
 {
     WAVE_GTKIFE("/File/Open New Window", "<Control>N", menu_new_viewer, WV_MENU_FONV, "<Item>"),
     WAVE_GTKIFE("/File/Open New Tab", "<Control>T", menu_new_viewer_tab, WV_MENU_FONVT, "<Item>"),
-    WAVE_GTKIFE("/File/Reload Waveform", "<Shift><Control>R", menu_reload_waveform, WV_MENU_FRW, "<Item>"),
+  	WAVE_GTKIFE("/File/Reload Waveform", "<Shift><Control>R", menu_reload_waveform, WV_MENU_FRW, "<Item>"),
     WAVE_GTKIFE("/File/Export/Write VCD File As", NULL, menu_write_vcd_file, WV_MENU_WRVCD, "<Item>"),
     WAVE_GTKIFE("/File/Export/Write LXT File As", NULL, menu_write_lxt_file, WV_MENU_WRLXT, "<Item>"),
     WAVE_GTKIFE("/File/Export/Write TIM File As", NULL, menu_write_tim_file, WV_MENU_WRTIM, "<Item>"),
@@ -7623,6 +7630,7 @@ static gtkwave_mlist_t menu_items[] =
     WAVE_GTKIFE("/View/Scale To Time Dimension/ns",   NULL, menu_scale_to_td_n, WV_MENU_TDSCALEN, "<ToggleItem>"),
     WAVE_GTKIFE("/View/Scale To Time Dimension/ps",   NULL, menu_scale_to_td_p, WV_MENU_TDSCALEP, "<ToggleItem>"),
     WAVE_GTKIFE("/View/Scale To Time Dimension/fs",   NULL, menu_scale_to_td_f, WV_MENU_TDSCALEF, "<ToggleItem>"),
+	WAVE_GTKIFE("/Conversion", NULL, menu_conversion, WV_MENU_HWH, "<Item>"),
 
       /* 130 */
     WAVE_GTKIFE("/Help/WAVE Help", "<Control>H", menu_help, WV_MENU_HWH, "<Item>"),
